@@ -76,8 +76,7 @@ function Projects() {
       "
     >
       <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-
+       
         <div className="text-center mb-14">
           <p className="text-pink-500 font-semibold tracking-widest">
             MY WORK
@@ -102,7 +101,7 @@ function Projects() {
           </p>
         </div>
 
-        {/* Projects Grid */}
+       
 
         <div
           className="
@@ -134,7 +133,7 @@ function Projects() {
                 animate-fadeUp
               "
             >
-              {/* Project Image */}
+              
 
               <div className="relative overflow-hidden h-56">
                 <img
@@ -151,7 +150,6 @@ function Projects() {
                   "
                 />
 
-                {/* Pink Overlay */}
 
                 <div
                   className="
@@ -169,7 +167,6 @@ function Projects() {
                 />
               </div>
 
-              {/* Content */}
 
               <div className="p-6">
                 <h3
@@ -198,14 +195,13 @@ function Projects() {
                   {project.description}
                 </p>
 
-                {/* Technologies */}
+      
 
                 <p className="mt-4 text-sm font-medium text-pink-500">
                   {project.technologies}
                 </p>
 
-                {/* GitHub Button */}
-
+                
                 <a
                   href={project.github}
                   target="_blank"

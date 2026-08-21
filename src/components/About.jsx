@@ -9,7 +9,7 @@ function About() {
         </p>
 
         <h2 className="text-4xl font-bold mb-8">
-          Who <span className="text-pink-500">I Am</span>
+          Who <span className="text-pink-600">I Am</span>
         </h2>
 
         <div className="bg-slate-900 border border-pink-500/10 rounded-2xl p-8
@@ -17,10 +17,11 @@ function About() {
         transition-all duration-500">
 
           <p className="text-gray-400 leading-8">
-            I'm a BS Computer Science student and passionate Frontend
-            Developer. I enjoy creating clean, responsive and modern
-            web experiences. I have worked with HTML, CSS, JavaScript,
-            Bootstrap and I'm currently learning React and Tailwind CSS.
+            I’m  Asma Bibi, an aspiring Frontend Developer and Computer Science student. 
+            I have learned and worked with HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap, and Git/GitHub.
+             I enjoy creating responsive, user-friendly,and visually appealing websites and 
+             continuously improving my skills through hands-on projects and learning.
+
           </p>
 
         </div>

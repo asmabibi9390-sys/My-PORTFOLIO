@@ -36,7 +36,6 @@ function Navbar({ darkMode, setDarkMode }) {
             </a>
           ))}
 
-          {/* DARK / LIGHT BUTTON */}
 
           <button
             onClick={() => setDarkMode(!darkMode)}
@@ -62,7 +61,6 @@ function Navbar({ darkMode, setDarkMode }) {
 
       </div>
 
-      {/* MOBILE MENU */}
 
       {open && (
         <div className="md:hidden bg-white dark:bg-black px-6 py-5 space-y-4 border-t border-pink-500/10">
