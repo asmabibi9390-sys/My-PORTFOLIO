@@ -1,31 +1,38 @@
 function About() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="px-5 py-24 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <p className="section-label">About Me</p>
 
-      <div className="max-w-5xl mx-auto text-center">
+        <div className="mt-5 grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 className="text-4xl font-black leading-tight sm:text-5xl">
+              More than code.
+              <span className="block bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                It's about experience.
+              </span>
+            </h2>
 
-        <p className="text-pink-500 font-semibold mb-2">
-          ABOUT ME
-        </p>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 dark:text-slate-200">
+              I'm Asma Bibi, a passionate frontend developer who enjoys
+              creating modern, responsive and user-friendly websites.
+            </p>
+          </div>
 
-        <h2 className="text-4xl font-bold mb-8">
-          Who <span className="text-pink-600">I Am</span>
-        </h2>
+          <div className="glass-card">
+            <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">
+              I focus on creating clean interfaces, attractive designs and
+              smooth user experiences. I enjoy transforming ideas into
+              functional and visually appealing websites.
+            </p>
 
-        <div className="bg-slate-900 border border-pink-500/10 rounded-2xl p-8
-        hover:border-pink-500/40 hover:-translate-y-2
-        transition-all duration-500">
-
-          <p className="text-gray-400 leading-8">
-            I’m  Asma Bibi, an aspiring Frontend Developer and Computer Science student. 
-            I have learned and worked with HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap, and Git/GitHub.
-             I enjoy creating responsive, user-friendly,and visually appealing websites and 
-             continuously improving my skills through hands-on projects and learning.
-
-          </p>
-
+            <p className="mt-5 text-lg leading-8 text-slate-700 dark:text-slate-200">
+              My frontend toolkit includes HTML5, CSS3, Bootstrap, JavaScript,
+              React.js, Tailwind CSS, Git and GitHub.
+            </p>
+          </div>
         </div>
-
+        
       </div>
     </section>
   );

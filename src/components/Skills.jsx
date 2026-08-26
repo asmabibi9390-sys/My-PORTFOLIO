@@ -1,48 +1,46 @@
 const skills = [
-  { name: "HTML", icon: "🌐" },
-  { name: "CSS", icon: "🎨" },
-  { name: "JavaScript", icon: "⚡" },
+  { name: "HTML5", icon: "🌐" },
+  { name: "CSS3", icon: "🎨" },
   { name: "Bootstrap", icon: "🅱️" },
-  { name: "React", icon: "⚛️" },
-  { name: "Tailwind CSS", icon: "🌊" },
-  { name: "Git", icon: "🔧" },
+  { name: "JavaScript", icon: "⚡" },
+  { name: "React.js", icon: "⚛️" },
+  { name: "Tailwind CSS", icon: "💨" },
+  { name: "Git", icon: "🔀" },
   { name: "GitHub", icon: "🐙" },
 ];
 
 function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 bg-slate-900/40">
+    <section id="skills" className="px-5 py-24 md:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="text-center">
+          <p className="section-label">My Expertise</p>
 
-      <div className="max-w-6xl mx-auto text-center">
+          <h2 className="mt-4 text-4xl font-black sm:text-5xl">
+            My Skills
+          </h2>
 
-        <p className="text-pink-500 font-semibold">
-          MY SKILLS
-        </p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-slate-700 dark:text-slate-200">
+            Technologies and tools I use to create modern web experiences.
+          </p>
+        </div>
 
-        <h2 className="text-4xl font-bold mt-2 mb-12">
-          Technologies I <span className="text-pink-500">Use</span>
-        </h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
+        <div className="mt-14 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {skills.map((skill) => (
             <div
               key={skill.name}
-              className="bg-slate-950 border border-slate-800 rounded-2xl p-7
-              hover:border-pink-500 hover:-translate-y-3
-              hover:shadow-xl hover:shadow-pink-500/10
-              transition-all duration-500 group"
+              className="glass-card group text-center transition duration-300 hover:-translate-y-3"
             >
-              <div className="text-4xl mb-4 group-hover:scale-125 transition duration-300">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600/20 to-pink-500/20 text-3xl transition duration-300 group-hover:scale-110 group-hover:rotate-6">
                 {skill.icon}
               </div>
 
-              <h3 className="font-semibold text-gray-200 group-hover:text-pink-400 transition">
+              <h3 className="text-lg font-black sm:text-xl">
                 {skill.name}
               </h3>
             </div>
           ))}
-
+          
         </div>
 
       </div>

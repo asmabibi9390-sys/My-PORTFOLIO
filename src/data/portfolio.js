@@ -6,20 +6,19 @@ const portfolioData = {
   email: "asmabibi9390@gmail.com",
 
   skills: [
-    "HTML",
-    "CSS",
-    "JavaScript",
+    "HTML5",
+    "CSS3",
     "Bootstrap",
-    "React",
+    "JavaScript",
+    "React.js",
     "Tailwind CSS",
     "Git",
     "GitHub",
   ],
 
   social: {
-    github: "github.com/asmabibi9390-sys",
-    linkedin: "linkedin.com/in/asma-bibi-931677420  ",
-    email: "mailto:asmabibi9390@gmail.com",
+    github: "https://github.com/asmabibi9390-sys",
+    linkedin: "https://www.linkedin.com/in/asma-bibi-931677420/",
   },
 };
 

@@ -1,92 +1,106 @@
 import { useState } from "react";
 
 function Navbar({ darkMode, setDarkMode }) {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
-    "Home",
-    "About",
-    "Skills",
-    "Experience",
-    "Projects",
-    "Contact",
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ];
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-lg border-b border-pink-200 dark:border-pink-500/20 transition-all duration-500">
+    <header className="fixed left-0 top-0 z-50 w-full px-3 pt-3">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-slate-200/50 bg-white/80 px-4 py-3 shadow-xl backdrop-blur-xl dark:border-white/10 dark:bg-[#080b1c]/80">
 
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
+       
         <a
           href="#home"
-          className="text-2xl font-bold text-pink-500 hover:scale-110 transition-transform duration-300"
+          onClick={closeMenu}
+          className="group flex items-center gap-3"
         >
-          Asma<span className="text-slate-900 dark:text-white">.</span>
+          
+
+          <div>
+            <h1 className="text-lg font-black tracking-wide text-slate-900 dark:text-white">
+              Asma<span className="text-pink-500">.</span>
+            </h1>
+
+            <p className="hidden text-[11px] font-medium text-slate-500 sm:block dark:text-slate-400">
+              Frontend Developer
+            </p>
+          </div>
         </a>
 
-        <div className="hidden md:flex items-center gap-7">
-
+        
+        <div className="hidden items-center gap-1 lg:flex">
           {links.map((link) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              className="text-slate-700 dark:text-gray-300 hover:text-pink-500 relative after:absolute after:left-0 after:-bottom-2 after:w-0 after:h-[2px] after:bg-pink-500 hover:after:w-full after:transition-all after:duration-300"
+              key={link.name}
+              href={link.href}
+              className="rounded-xl px-4 py-2 text-sm font-bold text-slate-700 transition duration-300 hover:bg-purple-500/10 hover:text-purple-600 dark:text-slate-300 dark:hover:text-pink-400"
             >
-              {link}
+              {link.name}
             </a>
+
           ))}
 
 
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="relative w-14 h-7 rounded-full bg-pink-500 p-1 hover:scale-105 transition-all duration-300"
+            className="ml-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-lg text-white shadow-lg transition duration-300 hover:scale-110"
+            aria-label="Toggle theme"
           >
-            <span
-              className={`flex items-center justify-center w-5 h-5 bg-white rounded-full shadow-md transition-transform duration-300 ${
-                darkMode ? "translate-x-7" : "translate-x-0"
-              }`}
-            >
-              {darkMode ? "🌙" : "☀️"}
-            </span>
+            {darkMode ? "☀️" : "🌙"}
           </button>
 
         </div>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl text-pink-500"
-        >
-          ☰
-        </button>
-
-      </div>
-
-
-      {open && (
-        <div className="md:hidden bg-white dark:bg-black px-6 py-5 space-y-4 border-t border-pink-500/10">
-
-          {links.map((link) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-              className="block text-slate-700 dark:text-gray-300 hover:text-pink-500"
-            >
-              {link}
-            </a>
-          ))}
-
+        
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="text-pink-500"
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-lg text-white"
+            aria-label="Toggle theme"
           >
-            {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            {darkMode ? "☀️" : "🌙"}
           </button>
 
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-2xl text-slate-800 dark:border-white/10 dark:bg-white/5 dark:text-white"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? "×" : "☰"}
+          </button>
+        </div>
+      </nav>
+
+      
+      {menuOpen && (
+        <div className="mx-auto mt-2 max-w-7xl rounded-2xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#080b1c]/95 lg:hidden">
+          <div className="flex flex-col gap-2">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={closeMenu}
+                className="rounded-xl px-4 py-3 font-bold text-slate-700 transition hover:bg-purple-500/10 hover:text-purple-600 dark:text-slate-200 dark:hover:text-pink-400"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
         </div>
       )}
-
-    </nav>
+    </header>
   );
 }
 

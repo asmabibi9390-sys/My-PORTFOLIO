@@ -6,30 +6,55 @@ html {
   scroll-behavior: smooth;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  min-width: 320px;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  background: #f8fafc;
 }
 
-/* Fade Up */
+html.dark body {
+  background: #050816;
+}
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
+::selection {
+  background: #ec4899;
+  color: white;
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-xl transition-all duration-500;
+    @apply dark:border-white/10 dark:bg-white/[0.05] dark:shadow-black/20;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .glass-card:hover {
+    @apply -translate-y-1 border-purple-300 shadow-purple-500/10;
+    @apply dark:border-purple-400/30;
+  }
+
+  .section-label {
+    @apply text-sm font-black uppercase tracking-[0.3em] text-purple-600;
+    @apply dark:text-purple-400;
+  }
+
+  .skill-pill {
+    @apply rounded-full border border-slate-300 bg-white/80 px-4 py-2;
+    @apply text-sm font-bold text-slate-700 shadow-sm transition-all duration-300;
+    @apply dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200;
+  }
+
+  .skill-pill:hover {
+    @apply -translate-y-1 border-pink-400 bg-pink-500/10 text-pink-600;
+    @apply dark:text-pink-300;
   }
 }
 
-.animate-fadeUp {
-  animation: fadeUp 1s ease-out both;
-}
-
-/* Floating Image */
+/* Floating animation */
 
 @keyframes float {
   0%,
@@ -38,17 +63,67 @@ body {
   }
 
   50% {
-    transform: translateY(-18px);
+    transform: translateY(-16px);
   }
 }
 
 .animate-float {
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
 }
 
-/* Selection */
+/* Fade animation */
 
-::selection {
-  background: #ec4899;
-  color: white;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+/* Glow */
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Slow spin */
+
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slowSpin 18s linear infinite;
+}
+
+.animate-slow-spin-reverse {
+  animation: slowSpin 12s linear infinite reverse;
 }
